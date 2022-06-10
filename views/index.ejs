@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Modular Chat</title>
+</head>
+<body>
+  <h1>Module-Messenger</h1>
+
+  <ul class="messages">
+    <% for(var i = 0; i < messages.length; i++) {%>
+      <li class="message">
+        <span><%= messages[i].userName %></span>:
+        <span><%= messages[i].userMessage %></span>
+      </li>
+    <% } %>
+  </ul>
+
+  <h2>Send a message</h2>
+
+  <form action="/messages" method="POST">
+    <input type="text" placeholder="username" name="userName">
+    <input type="text" placeholder="message" name="userMessage">
+    <input type="submit">
+  </form>
+
+</body>
+</html>
