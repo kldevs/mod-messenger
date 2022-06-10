@@ -4,7 +4,6 @@ const MongoClient = require('mongodb').MongoClient
 const PORT = 8000
 require('dotenv').config()
 
-
 const dbConnectionStr = process.env.DB_STRING
 const dbName = 'mod-messenger-db'
 const dbCollection = 'messages'
@@ -18,10 +17,10 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
   .then(client => {
     const db = client.db(dbName)
     const messagesCollection = db.collection(dbCollection)
-    console.log('Connected to Database')
+    console.log(`Connected to Database: ${dbName}`)
 		
 		app.get('/', (req, res) => {
-			db.collection('messages').find().toArray()
+			messagesCollection.find().toArray()
 			.then(data => {
 				res.render('index.ejs', { messages: data })
 				console.log(data)
@@ -30,7 +29,7 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
 		})
 
 		app.post('/messages', (req, res) => {
-      messagesCollection.insertOne(req.body)
+      messagesCollection.insertOne({userName: req.body.userName, userMessage: req.body.userMessage})
       .then(result => {
         console.log(result)
         res.redirect('/')
