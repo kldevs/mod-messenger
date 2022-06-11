@@ -3,21 +3,16 @@
 <head>
   <meta charset="UTF-8">
 
-  <title>Mod-Messenger</title>
+  <title>mod-messenger</title>
 </head>
 <body>
   <header>
-
-    <span id="msgLoginStatus">Welcome, Guest</span>
-    <form>
-      <input id="txtName" type="text" placeholder="username">
-      <button id="btnLogin">Login</button>
-      <button id="btnLogout">Logout</button>
-    </form>
-
+    <div>
+      <span id="msgLoginStatus">Welcome! </span>
+    </div>
   </header>
   
-  <h1>Mod-Messenger</h1>
+  <h1>mod-messenger</h1>
 
   <ul class="messages">
     <% for(var i = 0; i < messages.length; i++) {%>
@@ -31,7 +26,7 @@
   <h2>Send a message</h2>
 
   <form action="/messages" method="POST">
-    <input id="userName" type="text" name="userName" value="Guest" hidden>
+    <input id="userName" type="text" name="userName" hidden>
     <input type="text" placeholder="message" name="userMessage">
     <input type="submit">
   </form>

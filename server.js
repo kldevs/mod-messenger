@@ -23,15 +23,21 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
 			messagesCollection.find().toArray()
 			.then(data => {
 				res.render('index.ejs', { messages: data })
-				console.log(data)
 			})
 			.catch(error => console.error(error))
+		})
+		
+		app.get('/login', (req, res) => {
+				res.render('login.ejs')
+		})
+		
+		app.post('/login', (req, res) => {
+        res.redirect('/')
 		})
 
 		app.post('/messages', (req, res) => {
       messagesCollection.insertOne({userName: req.body.userName, userMessage: req.body.userMessage})
       .then(result => {
-        console.log(result)
         res.redirect('/')
       })
       .catch(error => console.error(error))
