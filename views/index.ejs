@@ -15,10 +15,11 @@
   <h1>mod-messenger</h1>
 
   <ul class="messages">
-    <% for(var i = 0; i < messages.length; i++) {%>
+    <% for(let i = 0; i < messages.length; i++) {%>
       <li class="message">
-        <span><%= messages[i].userName %></span>:
-        <span><%= messages[i].userMessage %></span>
+        <span class="msgDateTime">[<%= messages[i].dateTime.toLocaleTimeString() %>]</span>
+        <span class="msgUserName"><%= messages[i].userName %></span>:
+        <span class="msgUserMessage"><%= messages[i].userMessage %></span>
       </li>
     <% } %>
   </ul>

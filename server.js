@@ -36,7 +36,7 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
 		})
 
 		app.post('/messages', (req, res) => {
-      messagesCollection.insertOne({userName: req.body.userName, userMessage: req.body.userMessage})
+      messagesCollection.insertOne({userName: req.body.userName, userMessage: req.body.userMessage, dateTime: new Date()})
       .then(result => {
         res.redirect('/')
       })
