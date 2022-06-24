@@ -1,9 +1,146 @@
+*{
+  box-sizing: border-box;
+}
+
 html{
-  font-family: monospace;
-  background: #111;
+  font-family: Arial;
+  background: #000;
   color: aliceblue;
 }
 
 a{
-  color: lightskyblue;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+header{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  
+  background: lightskyblue;
+  
+  box-shadow: 5px 5px 1px #666;
+  margin: 15px 0px;
+  padding: 5px 20px;
+  width: 50%;
+}
+
+h1{
+  text-shadow: 2px 2px #666;
+  min-width: 60%;
+  flex: 0;
+}
+
+nav{
+  align-self: center;
+  background: #fff;
+  color: #000;
+  font-size: .8rem;
+  border-radius: 10px;
+  box-shadow: 5px 5px 1px #666;
+  padding: 10px;
+  flex: 0;
+  text-align: right;
+}
+
+
+.login{
+  background: #333;
+  font-size: 1rem;
+  box-shadow: 5px 5px 1px #666;
+  list-style: none;
+  margin: 15px 0px;
+  padding: 10px;
+  width: 50%;
+}
+
+.btnClose{
+  background: #FFF;
+  font-size: .8rem;
+  text-align: right;
+  box-shadow: 2px 2px 1px #666;
+  border-radius: 50px;
+  padding: 5px;
+}
+
+.messages{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  
+  background: #333;
+  font-size: 1rem;
+  box-shadow: 5px 5px 1px #666;
+  list-style: none;
+  overflow-y: auto;
+  padding: 10px;
+  width: 50%;
+  height: 500px;
+}
+
+.message{
+  align-self: flex-start;
+
+  background: #FFF;
+  color: black;
+  overflow-wrap: anywhere;
+  border-radius: 10px;
+  box-shadow: 3px 3px 1px #666;
+  margin: 10px 0px;
+  padding: 5px 10px;
+  max-width: 80%;
+  flex: 1;
+}
+
+.self{
+  align-self: flex-end;
+  background: #111;
+  color: #fff
+}
+
+.msgDateTime{
+  font-size: .6em;
+}
+.msgUserName{
+  font-weight: bold;
+}
+
+.send{  
+  background: lightskyblue;
+  box-shadow: 5px 5px 1px #666;
+  padding: 10px;
+  width: 50%;
+}
+
+#sendForm{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+#sendText{
+  flex: 1;
+  
+  border-radius: 10px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 1px #666;
+  margin: 15px 0px;
+  padding: 5px 10px;
+  
+}
+
+#sendButton{
+  flex: 0;
+
+  background: #19f;
+  color: white;
+  font-weight: bold;
+  border: 0px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 1px #666;
+  margin: 15px 0px;
+  padding: 5px 10px;
 }

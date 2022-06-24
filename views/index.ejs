@@ -7,16 +7,15 @@
 </head>
 <body>
   <header>
-    <div>
-      <span id="msgLoginStatus">Welcome!</span>
-    </div>
+      <h1>mod-messenger</h1>
+      <nav>
+        <span id="msgLoginStatus">Welcome!</span>
+      </nav>
   </header>
-  
-  <h1>mod-messenger</h1>
 
   <ul class="messages">
     <% for(let i = 0; i < messages.length; i++) {%>
-      <li class="message">
+        <li class="message">
         <span class="msgDateTime">[<%= messages[i].dateTime.toLocaleTimeString() %>]</span>
         <span class="msgUserName"><%= messages[i].userName %></span>:
         <span class="msgUserMessage"><%= messages[i].userMessage %></span>
@@ -24,13 +23,13 @@
     <% } %>
   </ul>
 
-  <h2>Send a message</h2>
-
-  <form action="/messages" method="POST">
-    <input id="userName" type="text" name="userName" hidden>
-    <input type="text" placeholder="message" name="userMessage">
-    <input type="submit">
-  </form>
+  <section class="send">
+    <form id="sendForm" action="/messages" method="POST">
+      <input id="userName" type="text" name="userName" hidden>
+      <input id="sendText" type="text" placeholder="Type message" name="userMessage">
+      <input id="sendButton" type="submit" value="Send">
+    </form>
+  </section>
 
   <script src="js/main.js"></script>
 
